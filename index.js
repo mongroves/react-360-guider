@@ -1,21 +1,21 @@
 import React from 'react';
+import Say from 'react-say';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
+  Image,
+  NativeModules,
+  VrButton,
+  asset
 } from 'react-360';
+import InfoPanel from './panels/InfoPanel';
 
 export default class Guider extends React.Component {
   render() {
     return (
-      <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Welcome to React 360
-          </Text>
-        </View>
-      </View>
+      <View style={styles.panel} />
     );
   }
 };
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     // Fill the entire surface
     width: 1000,
     height: 600,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -41,3 +40,4 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('Guider', () => Guider);
+AppRegistry.registerComponent('InfoPanel', () => InfoPanel);
